@@ -2,7 +2,7 @@ let findPrime = function (...numbers) {
     let isPrime;
     for (let i = 0; i < numbers.length; i++) {
         isPrime = true;
-        for (let j = 2; j < numbers[i] - 1; j++) {
+        for (let j = 2; j < numbers[i]; j++) {
             if (numbers[i] % j === 0 ) {
                 isPrime = false;
            console.log(numbers[i] +" Asal sayı değildir.")
@@ -72,3 +72,45 @@ const arkadasSayilarMi = (number1,number2) => {
 }
 
 arkadasSayilarMi(220,284)
+
+
+/*
+1000'e kadarki tüm mükemmel sayıları listeleyen programı yazınız.
+Mükemmel sayı : Kendisi hariç pozitif tam bölenlerinin toplamı kendisine eşit olan sayıdır.
+*/
+const perfectNumber = function (number) {
+    let sum = 0;
+  
+    for (let i = 1; i < number; i++) {
+      if (number % i === 0) {
+        sum += i;
+      }
+    }
+    if (number === sum) {
+      console.log(`${number} mükemmel sayıdır.`);
+    }
+  };
+  
+  for (let i = 1; i < 10000; i++) {
+    perfectNumber(i);
+  }
+
+
+  const primeNumbers = function (number) {
+    
+    let isPrime = true;
+        for (let j = 2; j < number; j++) {
+            if (number % j === 0 ) {
+                isPrime = false;
+           break;
+            }
+            
+        }
+        if (isPrime === true) {
+            console.log(number + " Asaldır!");
+        }
+  };
+  
+  for (let i = 2; i < 10; i++) {
+    primeNumbers(i);
+  }
